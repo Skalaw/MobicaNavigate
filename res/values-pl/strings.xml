@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- General -->
+    <string name="app_name">MobicaNavigate</string>
+    <string name="title_activity_map_activity">Mapa</string>
+
+    <!-- Errors -->
+    <string name="no_internet_connection">Nie ma połączenia z internetem!</string>
+    <string name="no_gps_connection">Nie ma połączenia z GPS!</string>
+    <string name="warning">Czy na pewno chcesz uruchomić aplikację?</string>
+
+    <!-- MenuActivity -->
+    <string name="exit">Wyjście</string>
+    <string name="run_map">Włącz aplikację</string>
+    <string name="gps_settings">Ustawienia GPS</string>
+    <string name="internet_settings">Ustawienia internetu</string>
+    <string name="about_author">O autorze</string>
+    <string name="change_language">Zmień język na angielski</string>
+    <string name="choose_office">Wybierz biuro:</string>
+
+    <!-- AuthorActivity -->
+    <string name="app_author">Aplikacje Mobica Navigate stworzył Milosz Skalski</string>
+    <string name="email">E-mail: mskalski6@wp.pl</string>
+    <string name="email2">E-mail2: milosz.skalski@gmail.com</string>
+
+    <!-- ChoiceDialog -->
+    <string name="positive_button">Tak</string>
+    <string name="negative_button">Nie</string>
+    <string name="choice">Potwierdź</string>
+
+    <!-- ConfirmDialog -->
+    <string name="ok">Ok</string>
+    <string name="end_journey">Jest to koniec podróży!</string>
+
+    <!-- FirstRun -->
+    <string name="first_run_main_text">To jest twoje pierwsze uruchomienie\nTeraz wybierz język</string>
+    <string name="first_run_positive_button">Angielski</string>
+    <string name="first_run_negative_button">Polski</string>
+
+    <!-- MapActivity -->
+    <string name="route_end">Gratuluje, własnie dotarłeś do biura Mobica!</string>
+    <string name="distance">Dystans: </string>
+
+    <!-- MapActivity.menu -->
+    <string name="action_camera_map">Ustaw kamerę na mapę</string>
+    <string name="action_camera_jenkins">Ustaw kamerę na naszą pozycję</string>
+</resources>

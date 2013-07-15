@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+    <TextView
+            android:id="@+id/textViewDialogConfirmText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:padding="16sp"
+            android:minWidth="240sp"
+            android:textIsSelectable="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"/>
+
+    <Button
+            android:id="@+id/dialogBtnOk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:minWidth="100dp"
+            android:text="@string/ok"
+            android:layout_below="@+id/textViewDialogConfirmText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="14dp"/>
+
+</RelativeLayout>

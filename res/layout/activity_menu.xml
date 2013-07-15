@@ -1,0 +1,111 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            tools:context=".MainActivity">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin">
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageArrowLeft"
+                android:src="@drawable/arrow_left"
+                android:layout_below="@+id/textChooseOffice"
+                android:layout_marginTop="10dp"
+                android:layout_alignLeft="@+id/btnMap"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/textOffice"
+                android:layout_alignTop="@+id/imageArrowLeft"
+                android:layout_centerHorizontal="true"/>
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageArrowRight"
+                android:layout_alignTop="@+id/textOffice"
+                android:layout_alignRight="@+id/btnMap"
+                android:src="@drawable/arrow_right"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/choose_office"
+                android:id="@+id/textChooseOffice"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"/>
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/run_map"
+                android:id="@+id/btnMap"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/imageArrowLeft"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"/>
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/gps_settings"
+                android:id="@+id/btnGpsSettings"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/btnMap"
+                android:layout_alignLeft="@+id/btnMap"
+                android:layout_alignRight="@+id/btnMap"/>
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/internet_settings"
+                android:id="@+id/btnInternetSettings"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/btnGpsSettings"
+                android:layout_alignLeft="@+id/btnGpsSettings"
+                android:layout_alignRight="@+id/btnGpsSettings"/>
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/change_language"
+                android:id="@+id/btnChangeLanguage"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/btnInternetSettings"
+                android:layout_alignLeft="@+id/btnAuthor"
+                android:layout_alignRight="@+id/btnInternetSettings"/>
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/about_author"
+                android:id="@+id/btnAuthor"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/btnChangeLanguage"
+                android:layout_alignLeft="@+id/btnInternetSettings"
+                android:layout_alignRight="@+id/btnInternetSettings"/>
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/exit"
+                android:id="@+id/btnExit"
+                android:layout_below="@+id/btnAuthor"
+                android:layout_alignLeft="@+id/btnAuthor"
+                android:layout_marginTop="10dp"
+                android:layout_alignRight="@+id/btnAuthor"/>
+
+    </RelativeLayout>
+
+</ScrollView>

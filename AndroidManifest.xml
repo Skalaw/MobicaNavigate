@@ -17,7 +17,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
-
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
@@ -28,31 +27,36 @@
     <application
             android:allowBackup="true"
             android:icon="@drawable/ic_launcher"
-            android:theme="@android:style/Theme.NoTitleBar"
+            android:theme="@style/MNTheme"
             android:label="@string/app_name">
         <meta-data
                 android:name="com.google.android.maps.v2.API_KEY"
-                android:value="AIzaSyBj4z_AZtyzSYGo8J6IvEYRlrkYvTOnX-M" />
+                android:value="AIzaSyBj4z_AZtyzSYGo8J6IvEYRlrkYvTOnX-M"/>
 
         <!-- <uses-library -->
         <!-- android:name="com.google.android.maps" -->
         <!-- android:required="true" /> -->
 
         <activity
-                android:name="com.example.mobicanavigate.MainActivity"
-                android:label="@string/app_name">
-
+                android:name=".activities.SplashScreenActivity"
+                android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity
-                android:name="com.example.mobicanavigate.MapActivity"
-                android:label="@string/title_activity_map_activity">
-        </activity>
 
+        <activity
+                android:name=".activities.MenuActivity"
+                android:screenOrientation="portrait"/>
+        <activity
+                android:name=".activities.MapActivity"
+                android:screenOrientation="portrait"/>
+        <activity
+                android:name=".activities.AuthorActivity"
+                android:theme="@style/Transparent"
+                android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

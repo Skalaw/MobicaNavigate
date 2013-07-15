@@ -1,9 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <!-- General -->
     <string name="app_name">MobicaNavigate</string>
-    <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
     <string name="title_activity_map_activity">Map</string>
 
+    <!-- Errors -->
+    <string name="no_internet_connection">You are not connected with internet!</string>
+    <string name="no_gps_connection">You are not connected with gps!</string>
+    <string name="warning">You really want to run application?</string>
+
+    <!-- MenuActivity -->
+    <string name="exit">Exit</string>
+    <string name="run_map">Run application</string>
+    <string name="gps_settings">GPS settings</string>
+    <string name="internet_settings">Internet settings</string>
+    <string name="about_author">About author</string>
+    <string name="change_language">Change language to polish</string>
+    <string name="choose_office">Choose office:</string>
+
+    <!-- AuthorActivity -->
+    <string name="app_author">Application Mobica Navigate created by Milosz Skalski</string>
+    <string name="email">E-mail: mskalski6@wp.pl</string>
+    <string name="email2">E-mail2: milosz.skalski@gmail.com</string>
+
+    <!-- ChoiceDialog -->
+    <string name="positive_button">Yes</string>
+    <string name="negative_button">No</string>
+    <string name="choice">Confirm</string>
+
+    <!-- ConfirmDialog -->
+    <string name="ok">Ok</string>
+    <string name="end_journey">It is end journey!</string>
+
+    <!-- FirstRun -->
+    <string name="first_run_main_text">This is your first run\nNow select the language</string>
+    <string name="first_run_positive_button">English</string>
+    <string name="first_run_negative_button">Polish</string>
+
+    <!-- MapActivity -->
+    <string name="route_end">Congratulations, just come to the office Mobica!</string>
+    <string name="distance">Distance: </string>
+
+    <!-- MapActivity.menu -->
+    <string name="action_camera_map">Set camera on the map</string>
+    <string name="action_camera_jenkins">Set camera on the out position</string>
 </resources>

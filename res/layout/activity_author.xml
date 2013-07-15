@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:src="@drawable/author_screen"/>
+
+    <TextView
+            android:textColor="#FF8000"
+            android:textSize="22sp"
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/about_author"
+            android:layout_alignTop="@+id/imageView1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"/>
+
+    <TextView
+            android:textColor="#FFBF00"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_author"
+            android:lines="1"
+            android:ellipsize="marquee"
+            android:fadingEdge="horizontal"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:id="@+id/textOffice"
+            android:layout_below="@+id/textView1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_alignRight="@+id/imageView1"
+            android:layout_alignLeft="@+id/imageView1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"/>
+
+    <TextView
+            android:textColor="#FFBF00"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/email"
+            android:id="@+id/textChooseOffice"
+            android:layout_below="@+id/textOffice"
+            android:layout_alignLeft="@+id/textOffice"
+            android:layout_marginTop="2dp"/>
+
+    <TextView
+            android:textColor="#FFBF00"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/email2"
+            android:id="@+id/textView3"
+            android:layout_below="@+id/textChooseOffice"
+            android:layout_alignLeft="@+id/textChooseOffice"
+            android:layout_marginTop="2dp"/>
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageArrowLeft"
+            android:layout_below="@+id/textView3"
+            android:layout_alignRight="@+id/imageView1"
+            android:layout_alignLeft="@+id/imageView1"
+            android:layout_alignBottom="@+id/imageView1"
+            android:src="@drawable/ic_author"/>
+
+</RelativeLayout>
