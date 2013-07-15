@@ -135,3 +135,5 @@ Rysunek 11 Mapa z menu
 
 Rysunek 12 Komunikat przy dotarciu do biura
 
+##4. Autor.
+Miłosz Skalski
