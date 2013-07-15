@@ -21,7 +21,7 @@ W aplikacji został zdefiniowany własny temat(styl), dla aktywności jak i dla 
 -	wybrane miasto,
 -	ustawienie kamery, 
 
-zapis następuje dzięki SharedPreferences. Podczas pierwszego uruchomienia programu wyświetla się ChoiceDialog z wyborem języka jakiego chcemy używać. Przy próbie włączenia mapy bez włączonego GPS'a oraz internetu aplikacja spyta się poprzez ChoiceDialog o to czy na pewno chcemy uruchomić mape. Z każdego miejsca aplikacji klawiszem cofania możemy wyjść z aktywności/aplikacji. W klasie z mapą są obsłużone metody onResume oraz onPause wyłączające/włączające nasłuchiwanie z GPS. Do przejścia między dwoma aktywnościami jest nałożony efekt (Jeśli nie widzimy to musimy włączyć: Ustawienia -> Wyświetlacz -> Animacje ->Wszystkie animacje).
+zapis następuje dzięki SharedPreferences. Podczas pierwszego uruchomienia programu wyświetla się ChoiceDialog z wyborem języka jakiego chcemy używać. Przy próbie włączenia mapy bez włączonego GPS'a oraz internetu aplikacja spyta się poprzez ChoiceDialog o to, czy na pewno chcemy uruchomić mape. Z każdego miejsca aplikacji klawiszem cofania możemy wyjść z aktywności/aplikacji. W klasie z mapą są obsłużone metody onResume oraz onPause wyłączające/włączające nasłuchiwanie z GPS. Do przejścia między dwoma aktywnościami jest nałożony efekt (Jeśli nie widzimy to musimy włączyć: Ustawienia -> Wyświetlacz -> Animacje ->Wszystkie animacje).
 
 
 ###Dialogi:
@@ -65,7 +65,7 @@ zapis następuje dzięki SharedPreferences. Podczas pierwszego uruchomienia prog
 -	jeśli będziemy poruszać się inną drogą może nam ukazać się nowa droga, stara droga się usunie (usuwa się również w przypadku przebytej drogi)
 -	mamy możliwość 2 widoków które możemy wybrać po naciśnięciu klawisza opcji:
 	kamera która pokazuje wycentrowaną pozycję w której się znajdujemy
-	kamera z widoczną naszą pozycją oraz wybranego przez nas biura (w zależności jak się poruszamy mapa się 'zwiększa lub pomniejsza'
+	kamera z widoczną naszą pozycją oraz wybranego przez nas biura (w zależności jak się poruszamy mapa się 'zwiększa lub pomniejsza')
 -	jeśli będziemy się znajdować w pobliżu biura(do 20m) to wyświetli się komunikat o dotarciu na miejsce
 -	na dole mamy widoczny dystans od nas do biura w linii prostej
 
