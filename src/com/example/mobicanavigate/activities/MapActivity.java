@@ -51,8 +51,6 @@ public class MapActivity extends FragmentActivity implements LocationListener {
     private Marker mMarkerMobicaOffice;
     private double mDistance;
     private GMapV2Direction mMapDirection;
-    private Polyline polyline;
-    private Polyline polyline2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +72,6 @@ public class MapActivity extends FragmentActivity implements LocationListener {
         mGoogleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(coordsMobicaOffice, 10));
 
         mLocationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-        mMapDirection = new GMapV2Direction();
     }
 
     @Override
@@ -130,21 +127,9 @@ public class MapActivity extends FragmentActivity implements LocationListener {
         } else {
             mMarkerJenkins.setPosition(new LatLng(location.getLatitude(), location.getLongitude()));
         }
-
-        Document doc = mMapDirection.getDocument(new LatLng(location.getLatitude(), location.getLongitude()), new LatLng(mMarkerMobicaOffice.getPosition().latitude, mMarkerMobicaOffice.getPosition().longitude), GMapV2Direction.MODE_DRIVING);
-        ArrayList<LatLng> directionPoint = mMapDirection.getDirection(doc);
-        PolylineOptions rectLine = new PolylineOptions().width(3).color(Color.BLACK);
-        PolylineOptions rectLine2 = new PolylineOptions().width(1).color(Color.YELLOW);
-        for (int i = 0; i < directionPoint.size(); i++) {
-            rectLine.add(directionPoint.get(i));
-            rectLine2.add(directionPoint.get(i));
-        }
-        if (polyline != null) {
-            polyline.remove();
-            polyline2.remove();
-        }
-        polyline = mGoogleMap.addPolyline(rectLine);
-        polyline2 = mGoogleMap.addPolyline(rectLine2);
+        mMapDirection = new GMapV2Direction();
+        mMapDirection.setParams(new LatLng(location.getLatitude(), location.getLongitude()), new LatLng(mMarkerMobicaOffice.getPosition().latitude, mMarkerMobicaOffice.getPosition().longitude), mGoogleMap);
+        mMapDirection.execute();
 
         if (mIsCameraMap) {
             calculatedCamera();

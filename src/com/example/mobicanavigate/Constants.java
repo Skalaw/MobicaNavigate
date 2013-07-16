@@ -8,7 +8,7 @@ import com.example.mobicanavigate.model.Office;
 
 public class Constants {
     public static final int SPLASHSCREEN_DELAY = 2000;
-    public static final int REFRESH_TIME_GPS = 2000;
+    public static final int REFRESH_TIME_GPS = 1000;
     public static final String EMPTY_STRING = "";
     public static final String NEW_LINE = "\n";
     public static final String TAG = "MobicaNavigate";

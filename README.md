@@ -73,6 +73,7 @@ zapis następuje dzięki SharedPreferences. Podczas pierwszego uruchomienia prog
 ####GMapV2Direction
 -	klasa dzięki której pobieram drogę do mapy
 -	przez httpClienta pobieramy plik xml z drogą
+-	został dodany AsyncTask(naprawiał błąd z NetworkOnMainThreadException)
 
 ####Office
 -	jest to model, który posiada informacje do zlokalizowania biura (nazwa, szerokość geograficzna, długość geograficzna)

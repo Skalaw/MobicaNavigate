@@ -16,18 +16,30 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
 
+import android.graphics.Color;
+import android.os.AsyncTask;
 import android.util.Log;
 
-public class GMapV2Direction {
-    public final static String MODE_DRIVING = "driving";
-    public final static String MODE_WALKING = "walking";
+public class GMapV2Direction extends AsyncTask<Void, Void, Boolean> {
+    private LatLng mStart;
+    private LatLng mEnd;
+    private Document mDoc;
+    private GoogleMap mGoogleMap;
+    private Polyline mPolyline;
+    private Polyline mPolyline2;
 
-    public Document getDocument(LatLng start, LatLng end, String mode) {
+
+
+    @Override
+    protected Boolean doInBackground(Void... params) {
         String url = "http://maps.googleapis.com/maps/api/directions/xml?"
-                + "origin=" + start.latitude + "," + start.longitude
-                + "&destination=" + end.latitude + "," + end.longitude
+                + "origin=" + mStart.latitude + "," + mStart.longitude
+                + "&destination=" + mEnd.latitude + "," + mEnd.longitude
                 + "&sensor=false&units=metric&mode=driving";
         try {
             HttpClient httpClient = new DefaultHttpClient();
@@ -36,12 +48,37 @@ public class GMapV2Direction {
             HttpResponse response = httpClient.execute(httpPost, localContext);
             InputStream in = response.getEntity().getContent();
             DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-            Document doc = builder.parse(in);
-            return doc;
+            mDoc = builder.parse(in);
+            return true;
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return null;
+        return false;
+    }
+
+    @Override
+    protected void onPostExecute(Boolean successful) {
+        if (successful) {
+            ArrayList<LatLng> directionPoint = getDirection(mDoc);
+            PolylineOptions rectLine = new PolylineOptions().width(3).color(Color.BLACK);
+            PolylineOptions rectLine2 = new PolylineOptions().width(1).color(Color.YELLOW);
+            for (int i = 0; i < directionPoint.size(); i++) {
+                rectLine.add(directionPoint.get(i));
+                rectLine2.add(directionPoint.get(i));
+            }
+            if (mPolyline != null) {
+                mPolyline.remove();
+                mPolyline2.remove();
+            }
+            mPolyline = mGoogleMap.addPolyline(rectLine);
+            mPolyline2 = mGoogleMap.addPolyline(rectLine2);
+        }
+    }
+
+    public void setParams(LatLng start, LatLng end,GoogleMap googleMap) {
+        this.mStart = start;
+        this.mEnd = end;
+        this.mGoogleMap = googleMap;
     }
 
     public String getDurationText(Document doc) {
@@ -135,7 +172,6 @@ public class GMapV2Direction {
                 listGeopoints.add(new LatLng(lat, lng));
             }
         }
-
         return listGeopoints;
     }
 
@@ -175,5 +211,4 @@ public class GMapV2Direction {
         }
         return poly;
     }
-
 }
