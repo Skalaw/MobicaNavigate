@@ -33,8 +33,6 @@ public class GMapV2Direction extends AsyncTask<Void, Void, Boolean> {
     private Polyline mPolyline;
     private Polyline mPolyline2;
 
-
-
     @Override
     protected Boolean doInBackground(Void... params) {
         String url = "http://maps.googleapis.com/maps/api/directions/xml?"

@@ -8,6 +8,7 @@
     <string name="no_internet_connection">Nie ma połączenia z internetem!</string>
     <string name="no_gps_connection">Nie ma połączenia z GPS!</string>
     <string name="warning">Czy na pewno chcesz uruchomić aplikację?</string>
+    <string name="no_signal">Poczekaj na sygnał na GPS</string>
 
     <!-- MenuActivity -->
     <string name="exit">Wyjście</string>

@@ -8,6 +8,7 @@
     <string name="no_internet_connection">You are not connected with internet!</string>
     <string name="no_gps_connection">You are not connected with gps!</string>
     <string name="warning">You really want to run application?</string>
+    <string name="no_signal">Wait for a signal GPS</string>
 
     <!-- MenuActivity -->
     <string name="exit">Exit</string>

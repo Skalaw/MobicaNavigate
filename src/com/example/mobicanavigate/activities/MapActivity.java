@@ -89,18 +89,8 @@ public class MapActivity extends FragmentActivity implements LocationListener {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        String info = Constants.EMPTY_STRING;
-        if (!NetworkService.isInternetOn(this)) {
-            info += getResources().getString(R.string.no_internet_connection);
-        }
-        if (!NetworkService.isGpsOn(this)) {
-            if (!info.isEmpty()) {
-                info += Constants.NEW_LINE;
-            }
-            info += getResources().getString(R.string.no_gps_connection);
-        }
-        if (!info.isEmpty()) {
-            Toast.makeText(this, info, Toast.LENGTH_SHORT).show();
+        if (mMarkerJenkins == null) {
+            Toast.makeText(this, getResources().getString(R.string.no_signal), Toast.LENGTH_SHORT).show();
             return super.onOptionsItemSelected(item);
         }
 
