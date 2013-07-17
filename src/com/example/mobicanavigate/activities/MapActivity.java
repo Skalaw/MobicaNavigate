@@ -47,6 +47,7 @@ public class MapActivity extends FragmentActivity implements LocationListener {
     private SupportMapFragment mSupportMapFragment;
     private TextView textViewDistance;
     private LocationManager mLocationManager;
+    private LocationManager mLocationManager2;
     private Marker mMarkerJenkins;
     private Marker mMarkerMobicaOffice;
     private double mDistance;
@@ -72,6 +73,7 @@ public class MapActivity extends FragmentActivity implements LocationListener {
         mGoogleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(coordsMobicaOffice, 10));
 
         mLocationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+        mLocationManager2 = (LocationManager) getSystemService(LOCATION_SERVICE);
     }
 
     @Override
@@ -147,8 +149,8 @@ public class MapActivity extends FragmentActivity implements LocationListener {
     @Override
     protected void onResume() {
         super.onResume();
-        mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, Constants.REFRESH_TIME_GPS, 0, this);
-        mLocationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, Constants.REFRESH_TIME_GPS, 0, this);
+        mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, Constants.REFRESH_TIME_GPS, 10, this);
+        mLocationManager2.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, Constants.REFRESH_TIME_GPS, 10, this);
     }
 
     @Override
@@ -156,6 +158,9 @@ public class MapActivity extends FragmentActivity implements LocationListener {
         super.onPause();
         if (mLocationManager != null) {
             mLocationManager.removeUpdates(this);
+        }
+        if (mLocationManager2 != null) {
+            mLocationManager2.removeUpdates(this);
         }
     }
 
@@ -209,6 +214,9 @@ public class MapActivity extends FragmentActivity implements LocationListener {
     private void routeEnd() {
         if (mLocationManager != null) {
             mLocationManager.removeUpdates(this);
+        }
+        if (mLocationManager2 != null) {
+            mLocationManager2.removeUpdates(this);
         }
         ConfirmDialog fragment = new ConfirmDialog(getResources().getString(R.string.route_end));
         fragment.show(getSupportFragmentManager(), null);
